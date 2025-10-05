@@ -8,5 +8,6 @@
 module SeminarioPracticaProfesional {
 	requires java.desktop;
 	requires java.sql;
-	exports com.sate.ui; 
+
+	exports com.sate.ui;
 }
