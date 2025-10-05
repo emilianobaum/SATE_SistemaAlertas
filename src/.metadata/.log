@@ -4007,3 +4007,27 @@ java.nio.file.NoSuchFileException: C:\Users\ebaum\OneDrive\Documentos\Licenciatu
 
 !ENTRY org.eclipse.equinox.p2.repository 2 0 2025-10-05 17:28:58.754
 !MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.2/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2025-10-05 17:32:13.347
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/dwagelaar/jar2uml/master/update/artifacts.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2025-10-05 17:32:14.147
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/release/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2025-10-05 17:32:17.172
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.2/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-10-05 17:36:43.866
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,net.java.amateras.xstream,2.2.0.202406292300.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-10-05 17:36:43.894
+!MESSAGE No digest algorithm is available to verify download of org.eclipse.update.feature,net.java.amateras.modeler,2.2.0.202406292300.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-10-05 17:36:43.915
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,net.java.amateras.umleditor.java,2.2.0.202406292300.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-10-05 17:36:43.936
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,net.java.amateras.db,2.2.0.202406292300.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-10-05 17:36:43.959
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,net.java.amateras.umleditor,2.2.0.202406292300.
