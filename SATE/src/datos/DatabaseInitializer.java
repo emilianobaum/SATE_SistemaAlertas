@@ -31,7 +31,7 @@ public class DatabaseInitializer {
 
             createTables(conn);
             // Comento una vez inicializada la base de datos por primera vez
-            //insertInitialData(conn);
+            insertInitialData(conn);
             
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "DatabaseInitializer: Ocurrió un error SQL durante la inicialización de datos.", e);
@@ -151,4 +151,5 @@ public class DatabaseInitializer {
             LOGGER.config("Advertencia: Los reportes iniciales ya existían.");
         }
     }
+
 }
