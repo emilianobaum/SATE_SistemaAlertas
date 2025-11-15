@@ -22,5 +22,9 @@ public class Usuario {
     public String getPasswordHash() { return passwordHash; }
     public String getRol() { return rol; }
     
-    // Setters (omitiendo por simplicidad)
+    // Setters
+    //public void setId(String id) { this.id = id; }
+    public void setEmail(String email) { this.email = email; }
+    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    public void setRol(String rol) { this.rol = rol; }
 }

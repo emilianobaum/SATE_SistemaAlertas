@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Eventos SATE</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <style>
+        /* El mapa debe ocupar el 100% del contenedor WebView */
+        #mapa {
+            height: 100vh; /* Altura 100% del viewport */
+            width: 100vw;  /* Ancho 100% del viewport */
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mapa"></div>
+
+    <script>
+        // Coordenadas iniciales (ej. Córdoba, Argentina)
+        const CENTRO_MAPA_LAT = -31.4167; 
+        const CENTRO_MAPA_LON = -64.1833;
+        const ZOOM_INICIAL = 12;
+
+        // Inicializar el mapa
+        const mapa = L.map('mapa').setView([CENTRO_MAPA_LAT, CENTRO_MAPA_LON], ZOOM_INICIAL);
+        
+        // Grupo de marcadores para poder borrarlos fácilmente
+        let grupoMarcadores = L.layerGroup().addTo(mapa);
+        
+        // Añadir una capa de tiles (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mapa);
+
+        /**
+         * Función llamada desde JavaFX (MainDashboardFX) para cargar 
+         * TODOS los reportes APROBADOS.
+         * @param {Array<Object>} eventos - Array de objetos con {lat, lon, tipo, desc}.
+         */
+        function cargarMarcadores(eventos) {
+            console.log("Recibidos " + eventos.length + " eventos para cargar en el mapa.");
+            
+            // 1. Limpiar marcadores anteriores
+            grupoMarcadores.clearLayers();
+            
+            if (!eventos || eventos.length === 0) {
+                mapa.setView([CENTRO_MAPA_LAT, CENTRO_MAPA_LON], ZOOM_INICIAL);
+                return;
+            }
+
+            let latlngs = [];
+            
+            eventos.forEach(r => {
+                const lat = parseFloat(r.lat);
+                const lon = parseFloat(r.lon);
+                
+                if (isNaN(lat) || isNaN(lon)) {
+                    console.warn("Coordenadas inválidas omitidas:", r);
+                    return;
+                }
+
+                const coordenadas = [lat, lon];
+                latlngs.push(coordenadas);
+                
+                const popupContent = `
+                    <b>EVENTO: ${r.tipo}</b><br>
+                    Descripción: ${r.desc}<br>
+                    Coordenadas: ${lat.toFixed(4)}, ${lon.toFixed(4)}
+                `;
+                
+                L.marker(coordenadas)
+                 .bindPopup(popupContent)
+                 .addTo(grupoMarcadores);
+            });
+            
+            // Ajustar el mapa para mostrar todos los marcadores
+            if (latlngs.length > 0) {
+                 mapa.fitBounds(L.latLngBounds(latlngs), { padding: [50, 50] });
+            }
+        }
+    </script>
+</body>
+</html>
