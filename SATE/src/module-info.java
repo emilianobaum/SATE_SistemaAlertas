@@ -1,21 +1,31 @@
 module SATE {
-    // Requerimientos básicos de JavaFX
+    // 1. Requerimientos de JavaFX
     requires javafx.controls;
     requires javafx.graphics;
-    requires javafx.fxml; 
+    requires javafx.fxml;
+    requires javafx.web;     // WebView del Mapa
+    requires javafx.base;    // SimpleStringProperty
+
+    // 2. Requerimientos de Java
+    requires java.sql;       // Para JDBC
+    requires java.logging;   // Para el sistema de Logs
+
+    // --- APERTURA Y EXPORTACIÓN DE PAQUETES ---
     
-    // Requerimientos de SQL/JDBC para la capa de datos
-    requires java.sql;
+    // Exporta la UI para que la JVM pueda iniciarla
+    exports ui;
     
-    // 1. Exporta la UI para que la JVM la inicie
-    exports sate; 
-    
-    // 2. Exporta el Controlador para que la UI pueda llamarlo (el cliente)
+    // Exporta los controladores para que la UI pueda llamarlos
     exports controlador;
+    // Exporta los modelos para que la UI pueda llamarlos
+    //exports modelo;
+
+    // Abre el Modelo para que la TableView de JavaFX (javafx.base) 
+    // pueda acceder a los atributos (SimpleStringProperty) usando reflexión.
+    opens modelo to javafx.base;
     
-    // 3. Abre el Modelo para que la TableView de JavaFX acceda a sus atributos internos (reflection)
-    opens modelo to javafx.base; 
-    
-    // 4. Abre el paquete de UI si necesitas usar FXML (buena práctica)
-    opens sate to javafx.fxml; 
+    // Abre la UI para FXML (si se usa en el futuro)
+    opens ui to javafx.fxml;
+    // Abre controlador si usas FXML con controladores
+    opens controlador to javafx.fxml;
 }

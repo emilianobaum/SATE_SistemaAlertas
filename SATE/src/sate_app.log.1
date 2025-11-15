@@ -1,0 +1,574 @@
+nov 14, 2025 3:03:54 A. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 14, 2025 3:03:54 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 14, 2025 3:03:54 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 14, 2025 3:03:55 A. M. datos.DatabaseInitializer createTables
+INFORMACIÓN: Tabla 'usuarios' verificada/creada.
+nov 14, 2025 3:03:55 A. M. datos.DatabaseInitializer createTables
+INFORMACIÓN: Tabla 'reportes' verificada/creada.
+nov 14, 2025 3:03:55 A. M. datos.DatabaseInitializer createTables
+INFORMACIÓN: Tabla 'eventos' verificada/creada.
+nov 14, 2025 3:03:55 A. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Insertando datos iniciales de usuarios...
+nov 14, 2025 3:03:55 A. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Usuarios iniciales cargados.
+nov 14, 2025 3:03:55 A. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Insertando reportes iniciales...
+nov 14, 2025 3:03:56 A. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Reportes iniciales cargados.
+nov 14, 2025 3:03:56 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 14, 2025 3:03:56 A. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Consola) ---
+nov 14, 2025 3:03:57 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 3:03:57 A. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 14, 2025 10:23:12 P. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 14, 2025 10:23:12 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 14, 2025 10:23:12 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 14, 2025 10:23:33 P. M. datos.DatabaseInitializer initialize
+GRAVE: DatabaseInitializer: Ocurrió un error SQL durante la inicialización de datos.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at SATE/datos.ConexionDB.getConnection(ConexionDB.java:38)
+	at SATE/datos.DatabaseInitializer.initialize(DatabaseInitializer.java:25)
+	at SATE/ui.SATEApp.main(SATEApp.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:364)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1149)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at mysql.connector.j@9.4.0/com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at mysql.connector.j@9.4.0/com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at mysql.connector.j@9.4.0/com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at mysql.connector.j@9.4.0/com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at mysql.connector.j@9.4.0/com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:79)
+	at mysql.connector.j@9.4.0/com.mysql.cj.NativeSession.connect(NativeSession.java:142)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:963)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	... 15 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:589)
+	at java.base/sun.nio.ch.Net.connect(Net.java:578)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at mysql.connector.j@9.4.0/com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:144)
+	at mysql.connector.j@9.4.0/com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53)
+	... 18 more
+
+nov 14, 2025 10:23:33 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 14, 2025 10:23:33 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 14, 2025 10:23:33 P. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Consola) ---
+nov 14, 2025 10:23:34 P. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 10:23:34 P. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 14, 2025 10:23:41 P. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 10:26:53 P. M. controlador.ControladorEvento crearReporte
+INFORMACIÓN: Nuevo Reporte R-1763159212488 creado en estado PENDIENTE.
+nov 14, 2025 10:27:05 P. M. controlador.ControladorEvento aprobarReporte
+INFORMACIÓN: Reporte R-1763159212488 aprobado.
+nov 14, 2025 11:10:05 P. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 14, 2025 11:10:05 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 14, 2025 11:10:05 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 14, 2025 11:10:07 P. M. datos.DatabaseInitializer createTables
+GRAVE: Error al crear tablas.
+java.sql.SQLException: Unknown data type: 'AUTO_INCREMENT'
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685)
+	at SATE/datos.DatabaseInitializer.createTables(DatabaseInitializer.java:60)
+	at SATE/datos.DatabaseInitializer.initialize(DatabaseInitializer.java:32)
+	at SATE/ui.SATEApp.main(SATEApp.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:364)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1149)
+
+nov 14, 2025 11:10:07 P. M. datos.DatabaseInitializer initialize
+GRAVE: DatabaseInitializer: Ocurrió un error SQL durante la inicialización de datos.
+java.sql.SQLException: Unknown data type: 'AUTO_INCREMENT'
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685)
+	at SATE/datos.DatabaseInitializer.createTables(DatabaseInitializer.java:60)
+	at SATE/datos.DatabaseInitializer.initialize(DatabaseInitializer.java:32)
+	at SATE/ui.SATEApp.main(SATEApp.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:364)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1149)
+
+nov 14, 2025 11:10:07 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 14, 2025 11:10:07 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 14, 2025 11:10:07 P. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 14, 2025 11:10:08 P. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 11:10:08 P. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 14, 2025 11:11:11 P. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 14, 2025 11:11:11 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 14, 2025 11:11:11 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 14, 2025 11:11:13 P. M. datos.DatabaseInitializer createTables
+GRAVE: Error al crear tablas.
+java.sql.SQLException: Unknown data type: 'NOT'
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685)
+	at SATE/datos.DatabaseInitializer.createTables(DatabaseInitializer.java:60)
+	at SATE/datos.DatabaseInitializer.initialize(DatabaseInitializer.java:32)
+	at SATE/ui.SATEApp.main(SATEApp.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:364)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1149)
+
+nov 14, 2025 11:11:13 P. M. datos.DatabaseInitializer initialize
+GRAVE: DatabaseInitializer: Ocurrió un error SQL durante la inicialización de datos.
+java.sql.SQLException: Unknown data type: 'NOT'
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685)
+	at SATE/datos.DatabaseInitializer.createTables(DatabaseInitializer.java:60)
+	at SATE/datos.DatabaseInitializer.initialize(DatabaseInitializer.java:32)
+	at SATE/ui.SATEApp.main(SATEApp.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464)
+	at javafx.graphics@21.0.9/com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:364)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1149)
+
+nov 14, 2025 11:11:13 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 14, 2025 11:11:13 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 14, 2025 11:11:13 P. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 14, 2025 11:11:14 P. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 11:11:14 P. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 14, 2025 11:18:56 P. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 14, 2025 11:18:56 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 14, 2025 11:18:56 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 14, 2025 11:18:58 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Insertando datos iniciales de usuarios...
+nov 14, 2025 11:18:58 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Usuarios iniciales cargados.
+nov 14, 2025 11:18:58 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Insertando reportes iniciales...
+nov 14, 2025 11:18:58 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Reportes iniciales cargados.
+nov 14, 2025 11:18:58 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 14, 2025 11:18:58 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 14, 2025 11:18:58 P. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 14, 2025 11:18:59 P. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 11:18:59 P. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 14, 2025 11:27:33 P. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 14, 2025 11:27:33 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 14, 2025 11:27:33 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 14, 2025 11:27:34 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Insertando datos iniciales de usuarios...
+nov 14, 2025 11:27:34 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Usuarios iniciales cargados.
+nov 14, 2025 11:27:34 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Insertando reportes iniciales...
+nov 14, 2025 11:27:35 P. M. datos.DatabaseInitializer insertInitialData
+INFORMACIÓN: Reportes iniciales cargados.
+nov 14, 2025 11:27:35 P. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 14, 2025 11:27:35 P. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 14, 2025 11:27:35 P. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 14, 2025 11:27:39 P. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 14, 2025 11:27:39 P. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 14, 2025 11:28:02 P. M. datos.UsuarioDAO registrarNuevoUsuario
+GRAVE: Error al registrar nuevo usuario: ebaum@conae.gob.ar
+java.sql.SQLException: Column count doesn't match value count at row 1
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084)
+	at SATE/datos.UsuarioDAO.registrarNuevoUsuario(UsuarioDAO.java:67)
+	at SATE/controlador.ControladorUsuario.registrarUsuario(ControladorUsuario.java:68)
+	at SATE/ui.RegisterScreenFX.lambda$1(SATEApp.java:210)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.9/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.9/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+nov 14, 2025 11:28:02 P. M. controlador.ControladorUsuario registrarUsuario
+GRAVE: Error de DB al intentar registrar usuario: ebaum@conae.gob.ar
+java.sql.SQLException: Column count doesn't match value count at row 1
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084)
+	at SATE/datos.UsuarioDAO.registrarNuevoUsuario(UsuarioDAO.java:67)
+	at SATE/controlador.ControladorUsuario.registrarUsuario(ControladorUsuario.java:68)
+	at SATE/ui.RegisterScreenFX.lambda$1(SATEApp.java:210)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.9/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.9/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+nov 14, 2025 11:28:02 P. M. ui.RegisterScreenFX lambda$1
+GRAVE: Error de DB en RegisterScreenFX
+java.lang.Exception: Error de sistema al registrar usuario.
+	at SATE/controlador.ControladorUsuario.registrarUsuario(ControladorUsuario.java:72)
+	at SATE/ui.RegisterScreenFX.lambda$1(SATEApp.java:210)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.9/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.9/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.sql.SQLException: Column count doesn't match value count at row 1
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448)
+	at mysql.connector.j@9.4.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084)
+	at SATE/datos.UsuarioDAO.registrarNuevoUsuario(UsuarioDAO.java:67)
+	at SATE/controlador.ControladorUsuario.registrarUsuario(ControladorUsuario.java:68)
+	... 46 more
+
+nov 15, 2025 12:13:34 A. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 15, 2025 12:13:34 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 15, 2025 12:13:34 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 15, 2025 12:13:36 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 15, 2025 12:13:36 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 15, 2025 12:13:36 A. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 15, 2025 12:13:38 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 12:13:38 A. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 15, 2025 12:13:44 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 12:14:03 A. M. controlador.ControladorEvento aprobarReporte
+INFORMACIÓN: Reporte 60 aprobado.
+nov 15, 2025 12:43:38 A. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 15, 2025 12:43:38 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 15, 2025 12:43:38 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 15, 2025 12:43:40 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 15, 2025 12:43:40 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 15, 2025 12:43:40 A. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 15, 2025 12:43:41 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 12:43:41 A. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 15, 2025 12:43:45 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 2:38:28 A. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 15, 2025 2:38:29 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 15, 2025 2:38:29 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 15, 2025 2:38:31 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 15, 2025 2:38:31 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 15, 2025 2:38:31 A. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 15, 2025 2:38:32 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 2:38:32 A. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 15, 2025 2:38:37 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 3:04:04 A. M. util.LoggingConfig setup
+INFORMACIÓN: Sistema de Logging de SATE inicializado.
+nov 15, 2025 3:04:05 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicio de la aplicación SATE ---
+nov 15, 2025 3:04:05 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: Iniciando DatabaseInitializer...
+nov 15, 2025 3:04:06 A. M. datos.DatabaseInitializer initialize
+INFORMACIÓN: DatabaseInitializer finalizado.
+nov 15, 2025 3:04:06 A. M. ui.SATEApp main
+INFORMACIÓN: --- Inicialización de BBDD completada ---
+nov 15, 2025 3:04:06 A. M. ui.SATEApp main
+INFORMACIÓN: 
+--- Prueba de Login (Test X Consola) ---
+nov 15, 2025 3:04:07 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 3:04:07 A. M. ui.SATEApp main
+INFORMACIÓN: Login de consola exitoso. Usuario: admin@sate.com, Rol: ADMINISTRADOR
+nov 15, 2025 3:04:10 A. M. controlador.ControladorUsuario iniciarSesion
+INFORMACIÓN: Login exitoso para el usuario: admin@sate.com
+nov 15, 2025 3:05:25 A. M. ui.MainDashboardFX actualizarMapaConNOAA
+GRAVE: Error al actualizar mapa con datos NOAA
+netscape.javascript.JSException: TypeError: e.getLatLng is not a function. (In 'e.getLatLng()', 'e.getLatLng' is undefined)
+	at javafx.web@21.0.9/com.sun.webkit.dom.JSObject.fwkMakeException(JSObject.java:159)
+	at javafx.web@21.0.9/com.sun.webkit.WebPage.twkExecuteScript(Native Method)
+	at javafx.web@21.0.9/com.sun.webkit.WebPage.executeScript(WebPage.java:1576)
+	at javafx.web@21.0.9/javafx.scene.web.WebEngine.executeScript(WebEngine.java:985)
+	at SATE/ui.MainDashboardFX.actualizarMapaConNOAA(SATEApp.java:564)
+	at SATE/ui.MainDashboardFX.lambda$7(SATEApp.java:511)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.9/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.9/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.9/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.9/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.9/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.9/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.9/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.9/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.9/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
